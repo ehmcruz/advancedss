@@ -69,7 +69,7 @@ OBJS_HOST = ${OBJS_HOST_:.c=.o}
 ########################################################
 
 all: sanity_test cpu io general arch host
-	$(LD) $(LDFLAGS) -o $(BIN_NAME) src/*.o src/cpu/*.o $(OBJS_ARCH) src/io/*.o src/host_code/$(SIM_HOST_CODE)/*.o
+	$(LD) -o $(BIN_NAME) src/*.o src/cpu/*.o $(OBJS_ARCH) src/io/*.o src/host_code/$(SIM_HOST_CODE)/*.o $(LDFLAGS)
 	@echo program linked!
 	@echo enjoy!
 

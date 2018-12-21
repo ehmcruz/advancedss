@@ -79,7 +79,7 @@
 			double time; \
 			volatile int *aaa; \
 			time = host_sim_get_running_time(); \
-			LOG_PRINTF("Simulation stopped at cycle "PRINTF_UINT64_PREFIX" due to error (time = %f seconds... %f cycles/sec)\n", advancedss_get_system_cycle(), time, (double)advancedss_get_system_cycle() / time); \
+			LOG_PRINTF("Simulation stopped at cycle " PRINTF_UINT64_PREFIX " due to error (time = %f seconds... %f cycles/sec)\n", advancedss_get_system_cycle(), time, (double)advancedss_get_system_cycle() / time); \
 			LOG_PRINTF("File %s at line %u assertion failed!\n%s\n", __FILE__, __LINE__, #V); \
 			advancedss_print_status(); \
 			CONFIG_LOG_TO_FILE_CLOSE \

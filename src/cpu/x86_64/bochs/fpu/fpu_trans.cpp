@@ -33,6 +33,8 @@
 
 using namespace cpu;
 
+extern const floatx80 Const_1;
+
 extern float_status_t FPU_pre_exception_handling(Bit16u control_word);
 
 /* D9 F0 */
@@ -117,8 +119,6 @@ void BX_CPP_AttrRegparmN(1) BX_CPU_C::FPTAN(bxInstruction_c *i)
 
      return;
   }
-
-  extern const floatx80 Const_1;
 
   float_status_t status =
      FPU_pre_exception_handling(BX_CPU_THIS_PTR the_i387.get_control_word() | FPU_PR_80_BITS);

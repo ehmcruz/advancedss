@@ -31,6 +31,8 @@
 
 using namespace cpu;
 
+extern const floatx80 Const_Z;
+
 #if BX_SUPPORT_FPU
 
 extern float_status_t FPU_pre_exception_handling(Bit16u control_word);
@@ -542,8 +544,6 @@ void BX_CPP_AttrRegparmN(1) BX_CPU_C::FTST(bxInstruction_c *i)
      setcc(FPU_SW_C0|FPU_SW_C2|FPU_SW_C3);
   }
   else {
-     extern const floatx80 Const_Z;
-
      float_status_t status =
         FPU_pre_exception_handling(BX_CPU_THIS_PTR the_i387.get_control_word());
 
